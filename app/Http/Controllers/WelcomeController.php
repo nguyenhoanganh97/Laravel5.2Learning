@@ -6,7 +6,7 @@ class WelcomeController extends Controller
 {
     function index()
     {
-        return view('welcome');
+        return view('master');
     }
 
 }
