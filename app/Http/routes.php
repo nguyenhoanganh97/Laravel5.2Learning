@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +18,20 @@ Route::get('/', 'WelcomeController@index');
  * route truyển tham số
  * $stickername có thể không có
  */
-Route::get('sticker/{type}/{stickername?}', function ($type, $stickername = 'null') {
-    return "sticker thuộc: " . $type . " tên " . $stickername;
+Route::get('type/{stickername?}', function ($stickername = 'null') {
+    return "sticker tên " . $stickername;
 })->where([
     'type' => '[a-z]+',
     'stickername' => '[a-zA-Z]{1,10}'
 ]);
 
-Route::get('hello-world', function () { 
-    return view('hello-world');
+Route::get('hello-world', function () { //gọi thẳng view
+    $quantity = 5;
+    return view('hello-world',compact('quantity'));
+});
+
+Route::group(['prefix' => 'sticker'], function () {
+    Route::get('{stickerType}', function ($stickerType) {
+        echo "$stickerType";
+    });
 });

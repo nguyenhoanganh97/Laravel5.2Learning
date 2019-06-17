@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1 class="text-center">
-        hello world
+        hello world <?=$quantity?>
     </h1>
 </body>
 </html>
