@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Schema;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,4 +37,19 @@ Route::group(['prefix' => 'sticker'], function () {
     });
 });
 
+Route::get('home', 'HomeController@loadHome');
 
+Route::get('mystyle', function(){
+    // return URL::asset(''); laravel 4
+    return asset('public/template/css/mystyle.css',true);
+});
+
+Route::get('schema/createProductsTable', function (){
+    Schema::create('Products', function ($table) {
+        $table->increments('id');
+        $table->string('name');
+        $table->mediumInteger('price');
+        $table->mediumText('description')->nullable();
+        $table->timestamps('create');
+    });
+});

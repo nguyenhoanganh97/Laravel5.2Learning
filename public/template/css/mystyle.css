@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-weight: 100;
+    font-family: 'Lato';
+}
+
+.container {
+    text-align: center;
+    vertical-align: middle;
+    color: white
+}
+
+.header {
+    width: auto;
+    height: 150px;
+    background: black;
+}
+
+.content {
+    width: auto;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: gray;
+}
+
+.footer {
+    width: auto;
+    height: 150px;
+    background: black;
+}
+
+.title {
+    font-size: 96px;
+}
+
+.solgan {
+    font-size: 69px;
+}
