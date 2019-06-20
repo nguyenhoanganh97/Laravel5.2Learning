@@ -5,29 +5,34 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>AdminLTE 2 | Dashboard</title>
+  <base href="http://localhost/Laravel52Learning/">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="public/adminTemplate/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href=" {!! url('public/adminTemplate/bootstrap/dist/css/bootstrap.min.css') !!}">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="public/adminTemplate/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href=" {!! url('public/adminTemplate/font-awesome/css/font-awesome.min.css') !!}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="public/adminTemplate/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href=" {!! url('public/adminTemplate/Ionicons/css/ionicons.min.css') !!}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="public/adminTemplate/css/AdminLTE.min.css">
+  <link rel="stylesheet" href=" {!! url('public/adminTemplate/css/AdminLTE.min.css') !!}">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="public/adminTemplate/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href=" {!! url('public/adminTemplate/css/skins/_all-skins.min.css') !!}">
   <!-- Morris chart -->
-  <link rel="stylesheet" href="public/adminTemplate/morris.js/morris.css">
+  <link rel="stylesheet" href=" {!! url('public/adminTemplate/morris.js/morris.css') !!}">
   <!-- jvectormap -->
-  <link rel="stylesheet" href="public/adminTemplate/jvectormap/jquery-jvectormap.css">
+  <link rel="stylesheet" href=" {!! url('public/adminTemplate/jvectormap/jquery-jvectormap.css') !!}">
   <!-- Date Picker -->
-  <link rel="stylesheet" href="public/adminTemplate/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href=" {!! url('public/adminTemplate/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') !!}">
   <!-- Daterange picker -->
-  <link rel="stylesheet" href="public/adminTemplate/bootstrap-daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href=" {!! url('public/adminTemplate/bootstrap-daterangepicker/daterangepicker.css') !!}">
   <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')">
+
+  <!-- my style -->
+  <link rel="stylesheet" href="{!! url('public/template/css/mystyle.css') !!}">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,7 +50,7 @@
 
     <header class="main-header">
       <!-- Logo -->
-      <a href="index2.html" class="logo">
+      <a href="{!! route('/') !!}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>A</b>LT</span>
         <!-- logo for regular state and mobile devices -->
@@ -337,16 +342,23 @@
         <ul class="sidebar-menu" data-widget="tree">
           <li class="header">MAIN NAVIGATION</li>
           <li class="active treeview">
-            <a href="#">
+            <a href="/">
               <i class="fa fa-dashboard"></i> <span>Mac Staff</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
             </a>
-            <ul class="treeview-menu">
-              <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Show all</a></li>
-            </ul>
           </li>
+          <li class="treeview">
+              <a href="#">
+                <i class="fa fa-dashboard"></i> <span>User</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="user"><i class="fa fa-circle-o"></i>All Users</a></li>
+                <li><a href="user/create"><i class="fa fa-circle-o"></i>Add User</a></li>
+              </ul>
+              
+            </li>
         </ul>
       </section>
       <!-- /.sidebar -->
@@ -356,47 +368,19 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
-        <h1>
-          Mac Staff
-          <small>Show All</small>
-        </h1>
+        @section('content-header')
+          <h1>
+            Mac Staff
+            <small>Show All</small>
+          </h1>
+        @show
+        
+            
       </section>
 
       <!-- Main content -->
       <section class="content">
-        @yield('tableShowAll')
-        <div class="table-responsive">
-          <table class="table table-hover">
-              <thead class="thead-dark">
-                  <tr>
-                      <th scope="col" class="text-primary text-capitalize text-center">id</th>
-                      <th scope="col" class="text-primary text-capitalize text-center">mac id</th>
-                      <th scope="col" class="text-primary text-capitalize text-center">ip</th>
-                      <th scope="col" class="text-primary text-capitalize text-center">first login</th>
-                      <th scope="col" class="text-primary text-capitalize text-center">last login</th>
-                      <th scope="col" class="text-primary text-capitalize text-center">date check</th>
-                      <th scope="col" class="text-primary text-capitalize text-center">data full</th>
-                      <th scope="col" class="text-primary text-capitalize text-center">location</th>
-                      <th scope="col" class="text-primary text-capitalize text-center">action</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  @foreach ($macStaff as $row)
-                      <tr>
-                          <th scope="row"  class="text-center">{{ $row->id }}</th>
-                          <td class="text-center">{{ $row->mac_id }}</td>
-                          <td class="text-center">{{ $row->ip }}</td>
-                          <td class="text-center">{{ $row->first_login }}</td>
-                          <td class="text-center">{{ $row->last_login }}</td>
-                          <td class="text-center">{{ $row->date_check }}</td>
-                          <td class="text-center">{{ $row->data_full }}</td>
-                          <td class="text-center">{{ $row->location }}</td>
-                      </tr>
-                  @endforeach
-              </tbody>
-          </table>
-        </div>
-        @show
+        @yield('content')
       </section>
       <!-- /.content -->
 
