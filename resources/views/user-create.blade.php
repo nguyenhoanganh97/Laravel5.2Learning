@@ -5,6 +5,11 @@
         <small>Create</small>
     </h1>
 @stop
+
+@if ()
+    
+@endif
+
 @section('content')
     <form method="POST" action="{!! route('user.store') !!}" name="addForm" accept-charset="UTF-8" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
@@ -14,7 +19,7 @@
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <input type="text" required class="form-control" id="description" name="txtDescription">
+            <input type="text" class="form-control" id="description" name="txtDescription">
         </div>
         <div class="form-group">
             <label for="avatar">Avatar</label>

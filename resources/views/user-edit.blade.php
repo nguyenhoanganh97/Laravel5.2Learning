@@ -20,7 +20,7 @@
         <div class="form-group">
             <img width="30%" src="resources/images/userAvatar/{{ $data['avatar'] }}" alt="">
             <label class="d-block" for="avatar">choose another pic</label>
-            <input type="file" required id="avatar" name="avatar">
+            <input type="file" id="avatar" name="avatar">
         </div>
         <button type="submit" class="btn btn-default">Update</button>
     </form>

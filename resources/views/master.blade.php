@@ -11,7 +11,7 @@
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href=" {!! url('public/adminTemplate/bootstrap/dist/css/bootstrap.min.css') !!}">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href=" {!! url('public/adminTemplate/font-awesome/css/font-awesome.min.css') !!}">
+  <link rel="stylesheet" href="public/adminTemplate/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
   <!-- Ionicons -->
   <link rel="stylesheet" href=" {!! url('public/adminTemplate/Ionicons/css/ionicons.min.css') !!}">
@@ -29,7 +29,7 @@
   <!-- Daterange picker -->
   <link rel="stylesheet" href=" {!! url('public/adminTemplate/bootstrap-daterangepicker/daterangepicker.css') !!}">
   <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')">
+  <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
   <!-- my style -->
   <link rel="stylesheet" href="{!! url('public/template/css/mystyle.css') !!}">
@@ -50,7 +50,7 @@
 
     <header class="main-header">
       <!-- Logo -->
-      <a href="{!! route('/') !!}" class="logo">
+      <a href="#" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>A</b>LT</span>
         <!-- logo for regular state and mobile devices -->
@@ -68,7 +68,7 @@
             <!-- Messages: style can be found in dropdown.less-->
             <li class="dropdown messages-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-envelope-o"></i>
+                <i class="far fa-envelope"></i>
                 <span class="label label-success">4</span>
               </a>
               <ul class="dropdown-menu">
@@ -84,7 +84,7 @@
                         </div>
                         <h4>
                           Support Team
-                          <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                          <small><i class="far fa-clock"></i> 5 mins</small>
                         </h4>
                         <p>Why not buy a new awesome theme?</p>
                       </a>
@@ -97,7 +97,7 @@
                         </div>
                         <h4>
                           AdminLTE Design Team
-                          <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                          <small><i class="far fa-clock"></i> 2 hours</small>
                         </h4>
                         <p>Why not buy a new awesome theme?</p>
                       </a>
@@ -109,7 +109,7 @@
                         </div>
                         <h4>
                           Developers
-                          <small><i class="fa fa-clock-o"></i> Today</small>
+                          <small><i class="far fa-clock"></i> Today</small>
                         </h4>
                         <p>Why not buy a new awesome theme?</p>
                       </a>
@@ -121,7 +121,7 @@
                         </div>
                         <h4>
                           Sales Department
-                          <small><i class="fa fa-clock-o"></i> Yesterday</small>
+                          <small><i class="far fa-clock"></i> Yesterday</small>
                         </h4>
                         <p>Why not buy a new awesome theme?</p>
                       </a>
@@ -133,7 +133,7 @@
                         </div>
                         <h4>
                           Reviewers
-                          <small><i class="fa fa-clock-o"></i> 2 days</small>
+                          <small><i class="far fa-clock"></i> 2 days</small>
                         </h4>
                         <p>Why not buy a new awesome theme?</p>
                       </a>
@@ -146,7 +146,7 @@
             <!-- Notifications: style can be found in dropdown.less -->
             <li class="dropdown notifications-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-bell-o"></i>
+                  <i class="far fa-bell"></i></i>
                 <span class="label label-warning">10</span>
               </a>
               <ul class="dropdown-menu">
@@ -156,12 +156,12 @@
                   <ul class="menu">
                     <li>
                       <a href="#">
-                        <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                          <i class="fas fa-users text-aqua"></i></i> 5 new members joined today
                       </a>
                     </li>
                     <li>
                       <a href="#">
-                        <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
+                          <i class="fas fa-exclamation-triangle text-yellow"></i></i> Very long description here that may not fit into the
                         page and may cause design problems
                       </a>
                     </li>
@@ -188,7 +188,7 @@
             <!-- Tasks: style can be found in dropdown.less -->
             <li class="dropdown tasks-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-flag-o"></i>
+                  <i class="far fa-flag"></i>
                 <span class="label label-danger">9</span>
               </a>
               <ul class="dropdown-menu">
@@ -343,19 +343,19 @@
           <li class="header">MAIN NAVIGATION</li>
           <li class="active treeview">
             <a href="/">
-              <i class="fa fa-dashboard"></i> <span>Mac Staff</span>
+              <i class="fas fa-chart-line"></i> <span>Mac Staff</span>
             </a>
           </li>
           <li class="treeview">
               <a href="#">
-                <i class="fa fa-dashboard"></i> <span>User</span>
+                  <i class="fas fa-user"></i> <span>User</span>
                 <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="user"><i class="fa fa-circle-o"></i>All Users</a></li>
-                <li><a href="user/create"><i class="fa fa-circle-o"></i>Add User</a></li>
+                <li><a href="user"><i class="fas fa-users"></i> All Users</a></li>
+                <li><a href="user/create"><i class="fas fa-plus"></i> Add User</a></li>
               </ul>
               
             </li>

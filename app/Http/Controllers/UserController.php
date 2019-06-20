@@ -39,23 +39,25 @@ class UserController extends Controller
      */
     public function store(Request $rq)
     {
-        if ($rq->hasFile('avatar')) {
-            if ($rq->file('avatar')->isValid()) {
+        $validation = $this->validate($rq, [
+            'txtName' => 'bail|required|max:255',
+            'avatar' => 'required|file|image|max:2048'
+        ]);
+        if ($validation) {
+            $user = new User();
+            $user->name = $rq->txtName;
+            $user->description = $rq->txtDescription;
 
-                $fileExtension = $rq->file('avatar')->getClientOriginalExtension();
-                $fileName = str_random(20).".".$fileExtension;
-                $savePath = 'resources/images/userAvatar/';
-                $rq->file('avatar')->move($savePath,$fileName);
+            $fileExtension = $rq->file('avatar')->getClientOriginalExtension();
+            $fileName = str_random(20) . "." . $fileExtension;
+            $savePath = 'resources/images/userAvatar/';
+            $rq->file('avatar')->move($savePath, $fileName);
+            $user->avatar = $fileName;
 
-                $user = new User();
-                $user->name = $rq->input('txtName');
-                $user->description = $rq->input('txtDescription');
-                $user->avatar = $fileName;
-                $user->save();
-                return redirect('user');
-            }
+            $user->save();
+            return redirect('user')->with('status', 'user is created!!');
         }
-        return 'faild';
+        return redirect('user')->with('status', 'fail to create user, pls try again!!');
     }
 
     /**
@@ -80,10 +82,10 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         if ($user) {
             $data = [
-                'id'=>$id,
-                'name'=>$user->name,
-                'description'=>$user->description,
-                'avatar'=>$user->avatar
+                'id' => $id,
+                'name' => $user->name,
+                'description' => $user->description,
+                'avatar' => $user->avatar
             ];
             return view('user-edit', compact('data'));
         }
@@ -104,17 +106,17 @@ class UserController extends Controller
             $user->description = $request->input('txtDescription');
             if ($request->hasFile('avatar')) {
                 if ($request->file('avatar')->isValid()) {
-    
+
                     $fileExtension = $request->file('avatar')->getClientOriginalExtension();
-                    $fileName = str_random(20).".".$fileExtension;
+                    $fileName = str_random(20) . "." . $fileExtension;
                     $savePath = 'resources/images/userAvatar/';
-                    $request->file('avatar')->move($savePath,$fileName);
-    
+                    $request->file('avatar')->move($savePath, $fileName);
+
                     $user->avatar = $fileName;
                     $user->save();
                     return redirect('user');
                 }
-            }else {
+            } else {
                 $user->save();
                 return redirect('user');
             }
@@ -134,7 +136,7 @@ class UserController extends Controller
         if ($user) {
             $user->delete();
             return redirect('user');
-        }else {
+        } else {
             return redirect('user');
         }
     }
