@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\User;
+use App\Http\Requests\UserCreateRequest;
 
 class UserController extends Controller
 {
@@ -37,13 +38,8 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $rq)
+    public function store(UserCreateRequest $rq)
     {
-        $validation = $this->validate($rq, [
-            'txtName' => 'bail|required|max:255',
-            'avatar' => 'required|file|image|max:2048'
-        ]);
-        if ($validation) {
             $user = new User();
             $user->name = $rq->txtName;
             $user->description = $rq->txtDescription;
@@ -56,8 +52,6 @@ class UserController extends Controller
 
             $user->save();
             return redirect('user')->with('status', 'user is created!!');
-        }
-        return redirect('user')->with('status', 'fail to create user, pls try again!!');
     }
 
     /**

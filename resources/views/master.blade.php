@@ -12,7 +12,8 @@
   <link rel="stylesheet" href=" {!! url('public/adminTemplate/bootstrap/dist/css/bootstrap.min.css') !!}">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="public/adminTemplate/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"
+    integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
   <!-- Ionicons -->
   <link rel="stylesheet" href=" {!! url('public/adminTemplate/Ionicons/css/ionicons.min.css') !!}">
   <!-- Theme style -->
@@ -25,7 +26,8 @@
   <!-- jvectormap -->
   <link rel="stylesheet" href=" {!! url('public/adminTemplate/jvectormap/jquery-jvectormap.css') !!}">
   <!-- Date Picker -->
-  <link rel="stylesheet" href=" {!! url('public/adminTemplate/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') !!}">
+  <link rel="stylesheet"
+    href=" {!! url('public/adminTemplate/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') !!}">
   <!-- Daterange picker -->
   <link rel="stylesheet" href=" {!! url('public/adminTemplate/bootstrap-daterangepicker/daterangepicker.css') !!}">
   <!-- bootstrap wysihtml5 - text editor -->
@@ -42,7 +44,8 @@
   <![endif]-->
 
   <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -60,7 +63,7 @@
       <nav class="navbar navbar-static-top">
         <!-- Sidebar toggle button-->
         <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-          <span class="sr-only">Toggle navigation</span>
+          <i class="fas fa-bars"></i>
         </a>
 
         <div class="navbar-custom-menu">
@@ -146,7 +149,7 @@
             <!-- Notifications: style can be found in dropdown.less -->
             <li class="dropdown notifications-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="far fa-bell"></i></i>
+                <i class="far fa-bell"></i></i>
                 <span class="label label-warning">10</span>
               </a>
               <ul class="dropdown-menu">
@@ -156,12 +159,13 @@
                   <ul class="menu">
                     <li>
                       <a href="#">
-                          <i class="fas fa-users text-aqua"></i></i> 5 new members joined today
+                        <i class="fas fa-users text-aqua"></i></i> 5 new members joined today
                       </a>
                     </li>
                     <li>
                       <a href="#">
-                          <i class="fas fa-exclamation-triangle text-yellow"></i></i> Very long description here that may not fit into the
+                        <i class="fas fa-exclamation-triangle text-yellow"></i></i> Very long description here that may
+                        not fit into the
                         page and may cause design problems
                       </a>
                     </li>
@@ -188,7 +192,7 @@
             <!-- Tasks: style can be found in dropdown.less -->
             <li class="dropdown tasks-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="far fa-flag"></i>
+                <i class="far fa-flag"></i>
                 <span class="label label-danger">9</span>
               </a>
               <ul class="dropdown-menu">
@@ -204,7 +208,8 @@
                           <small class="pull-right">20%</small>
                         </h3>
                         <div class="progress xs">
-                          <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
+                            aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                             <span class="sr-only">20% Complete</span>
                           </div>
                         </div>
@@ -219,7 +224,8 @@
                           <small class="pull-right">40%</small>
                         </h3>
                         <div class="progress xs">
-                          <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar"
+                            aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                             <span class="sr-only">40% Complete</span>
                           </div>
                         </div>
@@ -234,7 +240,8 @@
                           <small class="pull-right">60%</small>
                         </h3>
                         <div class="progress xs">
-                          <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar"
+                            aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                             <span class="sr-only">60% Complete</span>
                           </div>
                         </div>
@@ -249,7 +256,8 @@
                           <small class="pull-right">80%</small>
                         </h3>
                         <div class="progress xs">
-                          <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar"
+                            aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                             <span class="sr-only">80% Complete</span>
                           </div>
                         </div>
@@ -347,18 +355,18 @@
             </a>
           </li>
           <li class="treeview">
-              <a href="#">
-                  <i class="fas fa-user"></i> <span>User</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="user"><i class="fas fa-users"></i> All Users</a></li>
-                <li><a href="user/create"><i class="fas fa-plus"></i> Add User</a></li>
-              </ul>
-              
-            </li>
+            <a href="#">
+              <i class="fas fa-user"></i> <span>User</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="user"><i class="fas fa-users"></i> All Users</a></li>
+              <li><a href="user/create"><i class="fas fa-plus"></i> Add User</a></li>
+            </ul>
+
+          </li>
         </ul>
       </section>
       <!-- /.sidebar -->
@@ -369,13 +377,13 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         @section('content-header')
-          <h1>
-            Mac Staff
-            <small>Show All</small>
-          </h1>
+        <h1>
+          Mac Staff
+          <small>Show All</small>
+        </h1>
         @show
-        
-            
+
+
       </section>
 
       <!-- Main content -->
