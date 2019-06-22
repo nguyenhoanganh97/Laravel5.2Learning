@@ -44,10 +44,11 @@ class UserController extends Controller
             $user->name = $rq->txtName;
             $user->description = $rq->txtDescription;
 
-            $fileExtension = $rq->file('avatar')->getClientOriginalExtension();
+            $file = $rq->file('avatar');
+            $fileExtension = $file->getClientOriginalExtension();
             $fileName = str_random(20) . "." . $fileExtension;
             $savePath = 'resources/images/userAvatar/';
-            $rq->file('avatar')->move($savePath, $fileName);
+            $file->move($savePath, $fileName);
             $user->avatar = $fileName;
 
             $user->save();
